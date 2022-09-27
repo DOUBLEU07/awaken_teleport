@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sarabun', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    display: none;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.intro {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.intro-slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: width: 100vw; */
+    height: 100%;
+    /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: height: 100vh; */
+    object-fit: cover;
+    z-index: -1;
+    /* filter: brightness(50%); */
+    /* 0% black, 100% original image, values > 100% are allowed for brighter than original image. */
+    /* display: none; */
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out;
+}
+
+.load {
+    position: absolute;
+    bottom: 10%;
+}
+
+.load i {
+    font-size: 40px;
+    animation: load 1s infinite linear;
+}
+
+@keyframes load {
+    100% {
+        transform: rotate(360deg);
+    }
+}
